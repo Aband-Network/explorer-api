@@ -1,5 +1,8 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Let the DB start
-export PYTHONPATH=".:${PYTHONPATH}"
+export PYTHONPATH="`pwd`:${PYTHONPATH}"
+echo $PYTHONPATH
 python ./app/prestart.py
+echo "=============="
+echo $PYTHONPATH
