@@ -49,7 +49,7 @@ class GraphQLQueries(metaclass=QueryGenerator):
         schema_overrides={"multi_address_account_id": graphene.String(description='')},
         order_by=(Extrinsic.block_number.desc(), Extrinsic.extrinsic_idx.desc()),
         filters=ExtrinsicFilter(),
-        paginated=True,
+        paginated=True, # 分页
         filter_combinations={
             Extrinsic.call_name: (Extrinsic.call_module,),
         }
@@ -423,6 +423,7 @@ class GraphQLQueries(metaclass=QueryGenerator):
         filter_required=True
     )
 
+    # 获取个人的所有event
     get_events_by_account = QueryNodeMany(
         class_name="GetEventsForAccount",
         model_=CodecEventIndexAccount,

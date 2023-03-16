@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 # Let the DB start
 export PYTHONPATH="`pwd`:${PYTHONPATH}"
